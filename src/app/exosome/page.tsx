@@ -11,6 +11,7 @@ import {
   Clock,
   CheckCircle2,
   HeartPulse,
+  Send,
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
@@ -214,70 +215,57 @@ const AccordionItem = ({ item }: { item: FaqItem }) => {
 export default function ExosomePage() {
   return (
     <div className="bg-[#f4f8ff] text-slate-900">
+      {/* 右側フローティングCTA（PC表示） */}
+      <div className="fixed right-3 top-1/3 z-50 hidden md:flex flex-col gap-3">
+        <a
+          href="#contact"
+          className="flex h-52 w-16 flex-col items-center justify-center gap-3 rounded-full bg-white text-[#7b5a50] shadow-lg ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-2xl"
+          aria-label="カウンセリング予約"
+        >
+          <Send className="h-6 w-6" />
+          <span
+            className="text-sm font-medium tracking-[0.2em] leading-6"
+            style={{ writingMode: "vertical-rl", wordBreak: "keep-all" }}
+          >
+            カウンセリング予約
+          </span>
+        </a>
+        <a
+          href="https://line.me/R/ti/p/@example"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex h-52 w-16 flex-col items-center justify-center gap-3 rounded-full bg-[#00b900] text-white shadow-lg ring-1 ring-[#00a200] transition hover:-translate-y-0.5 hover:shadow-2xl"
+          aria-label="LINE追加"
+        >
+          <svg
+            className="h-6 w-6 text-white"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+          </svg>
+          <div className="flex flex-col items-center justify-center text-sm font-medium leading-5">
+            {["L", "I", "N", "E", "追", "加"].map((char) => (
+              <span key={char}>{char}</span>
+            ))}
+          </div>
+        </a>
+      </div>
+
       <div className="relative overflow-hidden bg-gradient-to-b from-white via-[#eaf5ff] to-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(14,165,233,0.1),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(14,165,233,0.2),transparent_30%)]" />
-        <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 pb-16 pt-12 md:grid-cols-2 md:items-center md:pb-20 md:pt-16">
-          <motion.div
-            className="order-2 md:order-1 space-y-5"
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-          >
-            <p className="inline-flex items-center rounded-full bg-[#e0f4ff] px-3 py-1 text-xs font-semibold text-[#0b7db4]">
-              美と再生の最前線
-            </p>
-            <h1 className="font-serif text-3xl leading-tight text-slate-900 md:text-4xl">
-              歯髄由来 幹細胞培養上清液
-            </h1>
-            <p className="text-lg text-slate-700">
-              最先端の再生医療成分を贅沢に使用した、3つのアプローチをご用意しました。
-              内側から輝く美しさを、クリニック品質のDP-SCCMで。
-            </p>
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-sm font-semibold text-[#d9480f] shadow-sm ring-1 ring-orange-200">
-                <span className="rounded-full bg-[#d9480f] px-2 py-1 text-white">先着50名</span>
-                定価の60%OFF
-              </div>
-              <div className="flex items-baseline gap-2 rounded-full bg-white/80 px-4 py-2 text-slate-900 shadow-sm ring-1 ring-slate-200">
-                <span className="text-xl font-serif">1cc</span>
-                <span className="text-3xl font-extrabold text-[#d9480f]">19,800円</span>
-                <span className="text-sm text-slate-500">から</span>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <button className="rounded-full bg-[#0ea5e9] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#0ea5e9]/30 transition hover:-translate-y-0.5 hover:shadow-xl">
-                施術の特徴を見る
-              </button>
-              <button className="rounded-full border border-[#0ea5e9] px-5 py-3 text-sm font-semibold text-[#0ea5e9] transition hover:bg-[#e5f6ff]">
-                料金とコース
-              </button>
-            </div>
-            <div className="flex items-center gap-3 text-sm text-slate-600">
-              <CheckCircle2 className="h-5 w-5 text-[#0ea5e9]" />
-              医療品質のロット管理 / ラボ検証済み
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="order-1 md:order-2"
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-          >
-            <div className="relative overflow-hidden rounded-[28px] bg-white/70 shadow-xl ring-1 ring-white/40">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-white/40" />
-              <div className="relative">
-                <Image
-                  src="/images/exosome/hero.jpg"
-                  alt="施術イメージ"
-                  width={900}
-                  height={900}
-                  className="h-full w-full object-cover"
-                  priority
-                />
-              </div>
-            </div>
-          </motion.div>
+        <div className="relative mx-auto max-w-6xl px-4 pb-10 pt-10">
+          <div className="overflow-hidden rounded-[28px] shadow-xl ring-1 ring-slate-200">
+            <Image
+              src="/publicimagesexosomehero.png"
+              alt="施術イメージ"
+              width={1280}
+              height={720}
+              className="h-auto w-full object-cover"
+              priority
+            />
+          </div>
         </div>
       </div>
 
@@ -293,7 +281,7 @@ export default function ExosomePage() {
                 href="https://line.me/R/ti/p/@example"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#06c755] px-5 py-3 text-sm font-semibold text-white shadow-md shadow-[#06c755]/30 transition hover:-translate-y-0.5 hover:shadow-lg"
+                className="inline-flex items-center gap-2 rounded-full bg-[#06c755] px-5 py-3 text-sm font-medium text-white shadow-md shadow-[#06c755]/30 transition hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
@@ -302,7 +290,7 @@ export default function ExosomePage() {
               </a>
               <Link
                 href="/#pricing"
-                className="inline-flex items-center gap-2 rounded-full bg-[#0e5ba5] px-5 py-3 text-sm font-semibold text-white shadow-md shadow-[#0e5ba5]/30 transition hover:-translate-y-0.5 hover:shadow-lg"
+                className="inline-flex items-center gap-2 rounded-full bg-[#0e5ba5] px-5 py-3 text-sm font-medium text-white shadow-md shadow-[#0e5ba5]/30 transition hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M2 4a2 2 0 012-2h16a2 2 0 012 2v1.5l-10 5-10-5V4zm0 4.236l9.447 4.724a1 1 0 00.894 0L22 8.236V20a2 2 0 01-2 2H4a2 2 0 01-2-2V8.236z" />
@@ -360,7 +348,7 @@ export default function ExosomePage() {
             <div className="flex flex-wrap items-center justify-center gap-3 text-[#0e5ba5]">
               <span className="rounded-full bg-[#e5f1ff] px-3 py-1 text-sm font-semibold">施術メニュー①</span>
               <span className="text-sm font-semibold text-[#0e5ba5]">
-                先着50名!! <span className="text-xl text-[#d9480f] font-extrabold">1cc 19,800円 (税込)</span> 定価の60%OFF
+                先着50名!! <span className="text-xl text-[#d9480f] font-extrabold">10cc 198,000円 (税込)</span> 定価の60%OFF
           </span>
             </div>
           </div>
@@ -421,7 +409,7 @@ export default function ExosomePage() {
               </div>
               <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
                 <span className="font-semibold text-slate-700">価格</span>
-                <span className="col-span-2">1cc 19,800円</span>
+                <span className="col-span-2">10cc 198,000円</span>
               </div>
               <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
                 <span className="font-semibold text-slate-700">効果持続期間</span>
