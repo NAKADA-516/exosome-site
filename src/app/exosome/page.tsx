@@ -436,34 +436,6 @@ export default function ExosomePage() {
         </div>
       </div>
 
-      {/* MPガン 解説セクション */}
-      <div className="px-6 pb-14">
-        <div className="mx-auto max-w-5xl rounded-2xl border border-[#d6e4f5] bg-white shadow-sm">
-          <div className="flex flex-col gap-6 p-6 md:flex-row md:items-center md:gap-8">
-            <div className="flex-1 space-y-3 text-slate-800">
-              <h3 className="text-2xl font-bold text-[#0e5ba5]">MPガン</h3>
-              <p>
-                MPガンとは、スピーディかつ均一に薬液を皮下に細かく注入できる機器です。痛みや出血、ダウンタイム、肌ダメージが少なく、薬剤を均一に注入することができます。薬剤の効果に加え、針の刺激により自然治癒力（創傷治癒力）が活性化され、コラーゲンやエラスチンの生成が促進されることで、肌のキメを整え、毛穴の引き締めや肌質改善の効果も期待できます。
-              </p>
-              <p>
-                水光注射とは異なり、目の下や目じりの小じわや小鼻など細かな部位にも注入可能です。
-              </p>
-            </div>
-            <div className="flex-1">
-              <div className="overflow-hidden rounded-xl border border-[#d6e4f5] bg-[#f7fbff] p-3">
-                <Image
-                  src="/mpgun-device.png"
-                  alt="MPガンの機器イメージ"
-                  width={520}
-                  height={320}
-                  className="h-full w-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* カウンセリングCTA（再掲） */}
       <div className="px-6 pb-14">
         <div className="mx-auto max-w-4xl">
