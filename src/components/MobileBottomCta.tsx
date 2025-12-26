@@ -13,7 +13,7 @@ export default function MobileBottomCta() {
             className="flex items-center justify-center gap-1 rounded-full border border-[#0ea5e9] bg-[#e5f6ff] px-3 py-2 text-[#0b7db4] shadow-sm transition active:translate-y-[1px]"
           >
             <Send className="h-4 w-4" />
-            <span className="whitespace-nowrap">カウンセリング予約</span>
+            <span className="whitespace-nowrap">WEB予約</span>
           </Link>
           <a
             href="https://line.me/R/ti/p/@example"
