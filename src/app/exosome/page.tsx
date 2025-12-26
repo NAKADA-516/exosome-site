@@ -311,7 +311,7 @@ export default function ExosomePage() {
       </div>
 
       {/* 説明セクション（CTA直下） */}
-      <div className="mt-12 bg-[#eaf3ff] px-6 py-12">
+      <div className="mt-12 px-6 py-12 bg-soft-gradient bg-dots">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-start">
           <div className="flex-1">
             <div className="overflow-hidden rounded-2xl bg-[#eaf3ff] shadow-none ring-0">
@@ -340,7 +340,7 @@ export default function ExosomePage() {
       </div>
 
       {/* 施術メニュー セクション */}
-      <div className="px-6 py-14">
+      <div className="px-6 py-14 bg-soft-gradient bg-dots">
         <div className="mx-auto max-w-6xl space-y-8">
           <div className="text-center space-y-3">
             <p className="text-sm font-semibold text-[#0e5ba5] tracking-[0.2em]">施術メニュー</p>
@@ -437,7 +437,7 @@ export default function ExosomePage() {
       </div>
 
       {/* 施術メニュー セクション② */}
-      <div className="px-6 py-14">
+      <div className="px-6 py-14 bg-soft-gradient bg-dots">
         <div className="mx-auto max-w-6xl space-y-10">
           <div className="text-center space-y-3">
             <p className="text-sm font-semibold text-[#0e5ba5] tracking-[0.2em]">施術メニュー②</p>
@@ -558,7 +558,7 @@ export default function ExosomePage() {
       </div>
 
       {/* 施術メニュー セクション③ エアダーマジェット */}
-      <div className="px-6 py-14">
+      <div className="px-6 py-14 bg-soft-gradient bg-dots">
         <div className="mx-auto max-w-6xl space-y-10">
           <div className="text-center space-y-3">
             <p className="text-sm font-semibold text-[#0e5ba5] tracking-[0.2em]">施術メニュー③</p>
@@ -570,14 +570,14 @@ export default function ExosomePage() {
             </div>
           </div>
 
-          <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr] md:items-start">
-            <div className="flex items-center justify-center overflow-hidden rounded-2xl bg-[#f4f8ff] p-6 shadow-none ring-0">
+          <div className="grid gap-10 md:grid-cols-[0.7fr,1.3fr] md:items-start">
+            <div className="flex items-center justify-center overflow-hidden rounded-2xl bg-[#f4f8ff] p-4 shadow-none ring-0">
               <Image
-                src="/airjet.jpg"
+                src="/airjet1.jpeg"
                 alt="エアダーマジェットのイメージ"
-                width={360}
-                height={360}
-                className="h-auto w-full max-w-[360px] object-contain"
+                width={260}
+                height={260}
+                className="h-auto w-full max-w-[260px] max-h-[240px] object-contain"
               />
             </div>
             <div className="space-y-4 text-slate-800">
