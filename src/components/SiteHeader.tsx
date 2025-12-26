@@ -14,7 +14,9 @@ export default function SiteHeader() {
     <header className="bg-[#f7eae5] text-slate-800">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 text-sm md:text-base">
         <Link href="/" className="flex items-center gap-2 font-serif text-lg md:text-xl">
-          <span className="font-semibold">NEWAGE CLINIC</span>
+          <span className="font-semibold" suppressHydrationWarning>
+            NEWAGE CLINIC
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">

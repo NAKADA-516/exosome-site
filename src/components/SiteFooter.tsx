@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Send, Sparkles, HeartPulse, ShieldCheck } from "lucide-react";
+import { Phone, Send } from "lucide-react";
 
 const accessList = [
   "日比谷線 東銀座駅3番出口から徒歩3分",
@@ -23,7 +23,7 @@ export default function SiteFooter() {
         <div className="grid gap-8 md:grid-cols-[1fr,1.2fr] md:items-start">
           <div className="space-y-4 rounded-2xl bg-white p-6 shadow-md ring-1 ring-slate-100">
             <div className="flex items-center gap-2 font-serif text-lg font-semibold">
-              <span>NEWAGE CLINIC</span>
+              <span suppressHydrationWarning>NEWAGE CLINIC</span>
             </div>
             <div className="space-y-2 text-sm leading-6 text-slate-700">
               <p>東京都中央区銀座3-11-16 VORT銀座イースト10F</p>

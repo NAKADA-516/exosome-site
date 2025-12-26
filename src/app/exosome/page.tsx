@@ -17,7 +17,7 @@ import { useState, type ReactNode } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
 type FaqItem = {
@@ -314,9 +314,9 @@ export default function ExosomePage() {
       <div className="mt-12 bg-[#eaf3ff] px-6 py-12">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-start">
           <div className="flex-1">
-            <div className="overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-white/60">
+            <div className="overflow-hidden rounded-2xl bg-[#eaf3ff] shadow-none ring-0">
               <Image
-                src="/images/exosome/tooth.jpg"
+                src="/tooth.png"
                 alt="歯髄由来幹細胞のイメージ"
                 width={720}
                 height={720}
@@ -333,7 +333,7 @@ export default function ExosomePage() {
               歯髄（しずい）とは、歯の中心部にある柔らかい組織のことで、いわゆる「歯の神経」として知られています。この部分には血管や神経に加え、非常に再生能力の高い「間葉系幹細胞（MSC）」が多く存在しています。特に若年者の歯髄から得られる幹細胞は、その活性の高さから美容医療分野で注目を集めています。
             </p>
             <p>
-              当クリニックでは、高品質な歯髄由来幹細胞培養上清液を使用し、お肌の若返りや全身の健康促進を目指す最先端の治療を提供しています。1ccあたり19,800円というアクセスしやすい価格設定で、最新の再生医療の恩恵を体験いただけます。
+              当クリニックでは、高品質な歯髄由来幹細胞培養上清液を使用し、お肌の若返りや全身の健康促進を目指す最先端の治療を提供しています。10ccあたり198,000円というアクセスしやすい価格設定で、最新の再生医療の恩恵を体験いただけます。
             </p>
           </div>
         </div>
@@ -341,7 +341,7 @@ export default function ExosomePage() {
 
       {/* 施術メニュー セクション */}
       <div className="px-6 py-14">
-        <div className="mx-auto max-w-6xl space-y-10">
+        <div className="mx-auto max-w-6xl space-y-8">
           <div className="text-center space-y-3">
             <p className="text-sm font-semibold text-[#0e5ba5] tracking-[0.2em]">施術メニュー</p>
             <h2 className="text-3xl font-bold text-slate-900">幹細胞上清液点滴</h2>
@@ -353,7 +353,7 @@ export default function ExosomePage() {
             </div>
           </div>
 
-          <div className="grid gap-10 md:grid-cols-[1.1fr,0.9fr] md:items-start">
+          <div className="grid gap-12 md:grid-cols-[1.2fr,1fr] md:items-center">
             <div className="space-y-4 text-slate-800">
               <p>
                 幹細胞上清液点滴は、歯髄由来幹細胞培養上清液を静脈内に直接投与する施術です。血流を通じて全身の細胞に有効成分を届け、体内から美と健康をサポートします。
@@ -369,7 +369,7 @@ export default function ExosomePage() {
             </div>
             <div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-slate-200">
               <Image
-                src="/images/exosome/menu-drip.jpg"
+                src="/publicimagesexosomemenu-drip.png"
                 alt="幹細胞上清液点滴のイメージ"
                 width={720}
                 height={720}
@@ -402,23 +402,35 @@ export default function ExosomePage() {
             <div className="bg-[#eaf3ff] px-4 py-3 text-sm font-semibold text-slate-800 md:px-6">
               施術詳細
             </div>
-            <div className="divide-y divide-slate-100 text-sm text-slate-800">
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">所要時間</span>
-                <span className="col-span-2">約30分</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">価格</span>
-                <span className="col-span-2">10cc 198,000円</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">効果持続期間</span>
-                <span className="col-span-2">個人差がありますが、通常2〜4週間程度</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">施術間隔</span>
-                <span className="col-span-2">月1〜2回の定期的な施術がおすすめ</span>
-              </div>
+            <div className="px-0 md:px-0">
+              <table className="w-full text-sm text-slate-800">
+                <tbody>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      所要時間
+                    </th>
+                    <td className="px-4 py-3">約30分</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      価格
+                    </th>
+                    <td className="px-4 py-3">10cc 198,000円</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      効果持続期間
+                    </th>
+                    <td className="px-4 py-3">個人差がありますが、通常2〜4週間程度</td>
+                  </tr>
+                  <tr>
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      施術間隔
+                    </th>
+                    <td className="px-4 py-3">月1〜2回の定期的な施術がおすすめ</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -440,7 +452,7 @@ export default function ExosomePage() {
           <div className="grid gap-10 md:grid-cols-[0.9fr,1.1fr] md:items-start">
             <div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-slate-200">
               <Image
-                src="/images/exosome/menu-mpgun.jpg"
+                src="/mpgun-facial.webp"
                 alt="MPガンフェイシャルのイメージ"
                 width={720}
                 height={720}
@@ -460,27 +472,41 @@ export default function ExosomePage() {
             <div className="bg-[#eaf3ff] px-4 py-3 text-sm font-semibold text-slate-800 md:px-6">
               施術詳細
             </div>
-            <div className="divide-y divide-slate-100 text-sm text-slate-800">
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">所要時間</span>
-                <span className="col-span-2">約60分</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">価格</span>
-                <span className="col-span-2">1cc 25,000円 (税込)</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">効果持続期間</span>
-                <span className="col-span-2">2〜3週間程度</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">施術間隔</span>
-                <span className="col-span-2">2週間〜1ヶ月に1回のペースがおすすめ</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">ダウンタイム</span>
-                <span className="col-span-2">1日〜1週間程度</span>
-              </div>
+            <div className="px-0">
+              <table className="w-full text-sm text-slate-800">
+                <tbody>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      所要時間
+                    </th>
+                    <td className="px-4 py-3">約60分</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      価格
+                    </th>
+                    <td className="px-4 py-3">1cc 25,000円 (税込)</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      効果持続期間
+                    </th>
+                    <td className="px-4 py-3">2〜3週間程度</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      施術間隔
+                    </th>
+                    <td className="px-4 py-3">2週間〜1ヶ月に1回のペースがおすすめ</td>
+                  </tr>
+                  <tr>
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      ダウンタイム
+                    </th>
+                    <td className="px-4 py-3">1日〜1週間程度</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
 
@@ -519,7 +545,7 @@ export default function ExosomePage() {
             <div className="flex-1">
               <div className="overflow-hidden rounded-xl border border-[#d6e4f5] bg-[#f7fbff] p-3">
                 <Image
-                  src="/images/exosome/mpgun-detail.jpg"
+                  src="/mpgun-device.png"
                   alt="MPガンの機器イメージ"
                   width={520}
                   height={320}
@@ -539,19 +565,19 @@ export default function ExosomePage() {
             <h2 className="text-3xl font-bold text-slate-900">幹細胞上清液×エアダーマジェット</h2>
             <div className="flex flex-wrap items-center justify-center gap-3 text-[#0e5ba5]">
               <span className="text-sm font-semibold text-[#0e5ba5]">
-                先着50名!! <span className="text-xl text-[#d9480f] font-extrabold">1cc 19,800円 (税込)</span> 定価の60%OFF
+                先着50名!! <span className="text-xl text-[#d9480f] font-extrabold">10cc 198,000円 (税込)</span> 定価の60%OFF
               </span>
             </div>
           </div>
 
-          <div className="grid gap-10 md:grid-cols-[0.9fr,1.1fr] md:items-start">
-            <div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-slate-200">
+          <div className="grid gap-10 md:grid-cols-[0.8fr,1.2fr] md:items-start">
+            <div className="flex items-center justify-center overflow-hidden rounded-2xl bg-[#f4f8ff] p-6 shadow-none ring-0">
               <Image
-                src="/images/exosome/menu-airjet.jpg"
+                src="/airjet.jpg"
                 alt="エアダーマジェットのイメージ"
-                width={720}
-                height={720}
-                className="h-full w-full object-cover"
+                width={360}
+                height={360}
+                className="h-auto w-full max-w-[360px] object-contain"
               />
             </div>
             <div className="space-y-4 text-slate-800">
@@ -568,86 +594,53 @@ export default function ExosomePage() {
             <div className="bg-[#eaf3ff] px-4 py-3 text-sm font-semibold text-slate-800 md:px-6">
               施術詳細
             </div>
-            <div className="divide-y divide-slate-100 text-sm text-slate-800">
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">所要時間</span>
-                <span className="col-span-2">約60分</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">価格</span>
-                <span className="col-span-2">1cc 19,800円 (税込)</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">効果持続期間</span>
-                <span className="col-span-2">2〜3週間程度</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">施術間隔</span>
-                <span className="col-span-2">2週間〜1ヶ月に1回のペースがおすすめ</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">痛み</span>
-                <span className="col-span-2">なし</span>
-              </div>
-              <div className="grid grid-cols-3 items-center gap-3 px-4 py-3 md:px-6">
-                <span className="font-semibold text-slate-700">ダウンタイム</span>
-                <span className="col-span-2">なし</span>
-              </div>
+            <div className="px-0">
+              <table className="w-full text-sm text-slate-800">
+                <tbody>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      所要時間
+                    </th>
+                    <td className="px-4 py-3">約60分</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      価格
+                    </th>
+                    <td className="px-4 py-3">10cc 198,000円 (税込)</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      効果持続期間
+                    </th>
+                    <td className="px-4 py-3">2〜3週間程度</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      施術間隔
+                    </th>
+                    <td className="px-4 py-3">2週間〜1ヶ月に1回のペースがおすすめ</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      痛み
+                    </th>
+                    <td className="px-4 py-3">なし</td>
+                  </tr>
+                  <tr>
+                    <th className="w-32 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-700">
+                      ダウンタイム
+                    </th>
+                    <td className="px-4 py-3">なし</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
 
 
-
-      {/* エアインジェクション解説セクション */}
-      <div className="px-6 pb-14">
-        <div className="mx-auto max-w-6xl space-y-10">
-          <div className="text-center space-y-3">
-            <h3 className="text-2xl font-bold text-[#0e5ba5]">エアインジェクションとは？</h3>
-            <p className="text-sm text-slate-700">高圧エアーで有効成分をナノサイズに圧縮し角層に浸透</p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="overflow-hidden rounded-xl border border-[#d6e4f5] bg-white shadow-sm">
-              <Image
-                src="/images/exosome/airjet-what-1.png"
-                alt="エアインジェクション イメージ1"
-                width={720}
-                height={420}
-                className="h-full w-full object-contain"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl border border-[#d6e4f5] bg-white shadow-sm">
-              <Image
-                src="/images/exosome/airjet-what-2.png"
-                alt="エアインジェクション イメージ2"
-                width={720}
-                height={420}
-                className="h-full w-full object-contain"
-              />
-            </div>
-          </div>
-
-          <div className="text-center space-y-3">
-            <h4 className="text-lg font-semibold text-[#0e5ba5]">1台であらゆる肌トラブルに効果を発揮</h4>
-            <div className="grid grid-cols-3 gap-4 md:gap-6">
-              {["しみ", "毛穴", "ニキビ", "くすみ", "たるみ", "しわ"].map((label) => (
-                <div
-                  key={label}
-                  className="flex items-center justify-center rounded-full border border-[#d6e4f5] bg-white px-4 py-6 text-sm font-semibold text-slate-800 shadow-sm"
-                >
-                  {label}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="text-center space-y-2">
-            <p className="text-lg font-semibold text-slate-900">痛みや腫れがなく、ダウンタイムもない</p>
-            <p className="text-lg font-semibold text-slate-900">忙しい現代人に最適な施術</p>
-          </div>
-        </div>
-      </div>
 
       {/* カウンセリングCTA（再掲） */}
       <div className="px-6 pb-14">
