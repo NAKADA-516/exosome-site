@@ -346,7 +346,7 @@ export default function ExosomePage() {
             <p className="text-sm font-semibold text-[#0e5ba5] tracking-[0.2em]">施術メニュー</p>
             <h2 className="text-3xl font-bold text-slate-900">幹細胞上清液点滴</h2>
             <div className="flex flex-wrap items-center justify-center gap-3 text-[#0e5ba5]">
-              <span className="rounded-full bg-[#e5f1ff] px-3 py-1 text-sm font-semibold">施術メニュー①</span>
+              <span className="rounded-full bg-[#e5f1ff] px-3 py-1 text-sm font-semibold">施術メニュー</span>
               <span className="text-sm font-semibold text-[#0e5ba5]">
                 先着50名!! <span className="text-xl text-[#d9480f] font-extrabold">10cc 198,000円 (税込)</span> 定価の60%OFF
           </span>
