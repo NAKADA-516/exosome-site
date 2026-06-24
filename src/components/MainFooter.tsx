@@ -29,7 +29,7 @@ export default function MainFooter() {
                 NA
               </div>
               <div>
-                <p className="text-lg font-semibold">NEW AGE CLINIC</p>
+                <p className="text-lg font-semibold">NEWAGE CLINIC</p>
                 <p className="text-xs text-slate-300">Exosome & DP-SCCM</p>
               </div>
             </div>
@@ -68,18 +68,13 @@ export default function MainFooter() {
                 </li>
                 <li>
                   <a
-                    href="https://line.me/R/ti/p/@example"
+                    href="https://line.me/R/ti/p/@605skqjc"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
                   >
                     LINE予約
                   </a>
-                </li>
-                <li>
-                  <Link href="/#pricing" className="hover:text-white transition-colors">
-                    WEB予約
-                  </Link>
                 </li>
               </ul>
             </div>
@@ -96,7 +91,7 @@ export default function MainFooter() {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-slate-400">
-          <p>© 2025 NEW AGE CLINIC. All rights reserved.</p>
+          <p>© 2025 NEWAGE CLINIC. All rights reserved.</p>
         </div>
       </div>
     </footer>

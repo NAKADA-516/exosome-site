@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { Phone, Send } from "lucide-react";
+import { Phone } from "lucide-react";
 
 const accessList = [
   "日比谷線 東銀座駅3番出口から徒歩3分",
@@ -36,13 +35,6 @@ export default function SiteFooter() {
               <Phone className="h-5 w-5" />
               03-6281-9733
             </a>
-            <Link
-              href="/#contact"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#7b5a50] px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#6c4f47]"
-            >
-              <Send className="h-4 w-4" />
-              ご予約はこちら
-            </Link>
             <div className="space-y-2 text-xs text-slate-600">
               {accessList.map((item) => (
                 <div key={item} className="flex items-start gap-2">
@@ -55,7 +47,7 @@ export default function SiteFooter() {
 
           <div className="overflow-hidden rounded-2xl shadow-md ring-1 ring-slate-100">
             <iframe
-              title="NEW AGE CLINIC Map"
+              title="NEWAGE CLINIC Map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.1600429531207!2d139.76999317559235!3d35.67107177258867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bbcb36efd8d%3A0xbf2b9bdf6c39d1c1!2sVORT%20Ginza%20East!5e0!3m2!1sen!2sjp!4v1719999999999!5m2!1sen!2sjp"
               width="100%"
               height="360"
@@ -67,9 +59,6 @@ export default function SiteFooter() {
           </div>
         </div>
       </div>
-
-      {/* 下部バーを非表示（要素なし） */}
     </footer>
   );
 }
-

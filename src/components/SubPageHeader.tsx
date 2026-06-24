@@ -31,7 +31,7 @@ export default function SubPageHeader() {
           </div>
           <div className="leading-tight">
             <Link href="/" className="text-base font-semibold text-slate-900">
-              NEW AGE CLINIC
+              NEWAGE CLINIC
             </Link>
             <p className="text-[11px] text-slate-500">Exosome & DP-SCCM</p>
           </div>
@@ -47,19 +47,13 @@ export default function SubPageHeader() {
           </div>
           <div className="flex items-center gap-2 pl-3">
             <a
-              href="https://line.me/R/ti/p/@example"
+              href="https://line.me/R/ti/p/@605skqjc"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-[#0ea5e9] px-4 py-2 text-sm font-semibold text-[#0ea5e9] transition hover:bg-[#e0f4ff]"
             >
               LINE予約
             </a>
-            <Link
-              href="/#pricing"
-              className="rounded-full bg-[#0ea5e9] px-4 py-2 text-sm font-semibold text-white shadow-md shadow-[#0ea5e9]/30 transition hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              WEB予約
-            </Link>
             <a
               href="tel:0362819733"
               className="rounded-full px-3 py-2 text-sm font-semibold text-slate-700 hover:text-slate-900"
@@ -103,7 +97,7 @@ export default function SubPageHeader() {
               </Link>
             ))}
             <a
-              href="https://line.me/R/ti/p/@example"
+              href="https://line.me/R/ti/p/@605skqjc"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
@@ -111,13 +105,6 @@ export default function SubPageHeader() {
             >
               LINE予約
             </a>
-            <Link
-              href="/#pricing"
-              onClick={() => setOpen(false)}
-              className={`${mobileLinkClass} bg-[#0ea5e9] text-white`}
-            >
-              WEB予約
-            </Link>
             <a
               href="tel:0362819733"
               onClick={() => setOpen(false)}
